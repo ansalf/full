@@ -1,23 +1,29 @@
 import "./App.css";
-import Siswa from "../src/Component/Siswa";
-import Matpel from "../src/Component/Matpel";
-import Guru from "../src/Component/Guru";
-import Buku from "../src/Component/Buku";
-import AddBuku from "../src/Component/AddBuku";
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import UpdateBuku from "../src/Component/UpdateBuku";
+import Siswa from "./Component/Siswa";
+import Matpel from "./Component/Matpel";
+import Guru from "./Component/Guru";
+import Buku from "./Component/Buku";
+import AddBuku from "./Component/AddBuku";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import UpdateBuku from "./Component/UpdateBuku";
 
 function App() {
   return (
     <div className="App">
       {/* <Siswa />
       <Matpel />
-      <Guru /> */}
+      <Guru />
       <Buku />
-      {/* <AddBuku /> */}
+      <AddBuku /> */}
 
       <BrowserRouter>
-        <Route exact path="/updatebuku/:id" component={UpdateBuku}/>
+        <Routes>
+          <Route path="/" element={<AddBuku />} />
+          <Route path="siswa" element={<Siswa />} />
+          <Route path="buku" element={<Buku />} />
+          <Route path="addBuku" element={<AddBuku />} />
+          <Route path="editBuku/:id" element={<UpdateBuku />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
