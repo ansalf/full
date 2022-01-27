@@ -6,6 +6,8 @@ use App\Http\Controllers\Api\SiswaController;
 use App\Http\Controllers\Api\MatpelController;
 use App\Http\Controllers\Api\GuruController;
 use App\Http\Controllers\Api\BukuController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -34,3 +36,6 @@ Route::post('v1/tambahsiswa', [SiswaController::class, 'addSiswa']);
 // edit data
 Route::get('v1/getbuku/{id}', [BukuController::class, 'getBuku']);
 Route::put('v1/updatebuku/{id}', [BukuController::class, 'updateBuku']);
+
+// register
+Route::post('v1/register', [UserController::class, 'register']);
