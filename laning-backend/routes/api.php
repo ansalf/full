@@ -34,8 +34,16 @@ Route::post('v1/tambahbuku', [BukuController::class, 'addBuku']);
 Route::post('v1/tambahsiswa', [SiswaController::class, 'addSiswa']);
 
 // edit data
-Route::get('v1/getbuku/{id}', [BukuController::class, 'getBuku']);
+Route::get('v1/getbuku/{id}/url/{id2}', [BukuController::class, 'getBuku']);
 Route::put('v1/updatebuku/{id}', [BukuController::class, 'updateBuku']);
 
 // register
 Route::post('v1/register', [UserController::class, 'register']);
+
+// login
+Route::post('v1/login', [UserController::class, 'login']);
+
+
+//logout
+Route::get('v1/logout', [UserController::class, 'logout']);
+// ->middleware("auth_token");
